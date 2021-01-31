@@ -40,12 +40,12 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /health/live
+              path: /q/health/live
               port: http
             initialDelaySeconds: 20
           readinessProbe:
             httpGet:
-              path: /health/ready
+              path: /q/health/ready
               port: http
           env:
             - name: QUARKUS_MONGODB_CONNECTION_STRING
