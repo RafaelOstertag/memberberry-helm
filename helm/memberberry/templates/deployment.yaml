@@ -63,12 +63,6 @@ spec:
                 secretKeyRef:
                   name: keycloak
                   key: client-secret
-            - name: QUARKUS_LOG_HANDLER_GELF_ENABLED
-              value: "true"
-            - name: QUARKUS_LOG_HANDLER_GELF_HOST
-              value: "udp:192.168.100.3"
-            - name: QUARKUS_LOG_HANDLER_GELF_PORT
-              value: "12201"
             - name: GOOGLE_APPLICATION_CREDENTIALS
               value: /config/secrets/firebase.cred.json
           volumeMounts:
