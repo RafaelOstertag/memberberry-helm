@@ -3,10 +3,6 @@ pipeline {
         label "helm"
     }
 
-    triggers {
-        pollSCM '@hourly'
-    }
-
     parameters {
         string defaultValue: 'none', description: 'Version to deploy', name: 'VERSION', trim: true
     }

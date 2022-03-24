@@ -68,12 +68,16 @@ spec:
           volumeMounts:
             - name: firebase-credentials
               mountPath: /config/secrets
+            - mountPath: /tmp
+              name: tmp-volume
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
         - name: firebase-credentials
           secret:
             secretName: firebase-credentials
+        - name: tmp-volume
+          emptyDir: {}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
